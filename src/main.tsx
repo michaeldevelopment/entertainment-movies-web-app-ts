@@ -7,10 +7,26 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import Bookmark from './pages/Bookmark'
+import Movies from './pages/Movies'
+import TvShows from './pages/TvShows'
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/movies",
+    element: <Movies />,
+  },
+  {
+    path: "/tvshows",
+    element: <TvShows />,
+  },
+  {
+    path: "/bookmark",
+    element: <Bookmark />,
   },
 ]);
 

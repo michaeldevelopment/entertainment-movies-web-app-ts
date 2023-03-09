@@ -1,6 +1,6 @@
 export interface initialStateInterface {
   title: string;
-  thumbnail: thumbnailInterface;
+  thumbnail: thumbnailType;
   year: number;
   category: string;
   rating: string;
@@ -8,7 +8,7 @@ export interface initialStateInterface {
   isTrending: boolean
 };
 
-interface thumbnailInterface {
+type thumbnailType = {
   trending?: trendingInterface;
   regular: regularInterface
 };
