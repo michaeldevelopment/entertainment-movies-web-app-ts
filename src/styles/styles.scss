@@ -1,0 +1,9 @@
+div.trendingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-items: space-between
+}
+
+div.trendingCard {
+  min-width: 500px;
+}

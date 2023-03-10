@@ -8,7 +8,7 @@ export interface initialStateInterface {
   isTrending: boolean
 };
 
-type thumbnailType = {
+export type thumbnailType = {
   trending?: trendingInterface;
   regular: regularInterface
 };

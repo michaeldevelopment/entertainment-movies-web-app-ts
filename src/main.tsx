@@ -7,9 +7,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import { Provider } from "react-redux";
+import store from "./store/index";
+
 import Bookmark from './pages/Bookmark'
 import Movies from './pages/Movies'
 import TvShows from './pages/TvShows'
+
+import "./styles//styles.scss";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +37,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <Provider store={store}>
      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )

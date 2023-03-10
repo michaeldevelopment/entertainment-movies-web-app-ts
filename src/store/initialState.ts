@@ -1,5 +1,3 @@
-import { initialStateInterface, actionTypes} from './../interfaces/redux';
-
 export const initialState = [
   {
     title: "Beyond Earth",
