@@ -1,9 +1,81 @@
-div.trendingContainer {
+$white-color: #FFFFFF;
+$white-color-with-opacity: rgb(255,255,255, 0.7);
+$background-color: #10141E;
+$red-color: #FC4747;
+$navbar-background-color: #161D2F;
+$lighter-blue-color: #5A698F;
+$text-shadow: 0px 2px 3px rgba(70,65,65,0.6);
+
+@mixin generalContainerStyle($wrap) {
   display: flex;
   flex-direction: row;
-  justify-items: space-between
+  flex-flow: $wrap;
+}
+
+@mixin generalCardStyle {
+  margin: 0px 20px;
+  
+  img {
+    border-radius: 20px;
+  }
+}
+
+@mixin generalCardTextStyle($marginLeftAllText, $h2MarginBottom) {
+  text-align: left;
+  bottom: 0;
+  left: 0;
+  margin-left: $marginLeftAllText;
+  text-shadow: $text-shadow;
+  
+  h2 {
+    margin: 0px 0px $h2MarginBottom 0px; 
+    color: $white-color;
+  }
+
+  span {
+    color: $white-color-with-opacity;
+  }
+}
+
+body {
+  background-color: $background-color;
+}
+
+div.trendingContainer {
+  @include generalContainerStyle(no-wrap);
+}
+
+div.recommendedForYouContainer {
+  @include generalContainerStyle(wrap);
+  width: 90vw;
 }
 
 div.trendingCard {
-  min-width: 500px;
+  @include generalCardStyle;
+  position: relative;
+  
+  img {
+    width: 540px;
+    height: 300px;
+  }
+}
+
+div.recommendedForYouCard {
+  @include generalCardStyle;
+}
+
+div.trendingCardText {
+  @include generalCardTextStyle(30px, 20px);
+  position: absolute;
+}
+
+div.recommendedForYouText {
+  @include generalCardTextStyle(5px, 30px);
+}
+
+h1.titleText {
+  color: $white-color;
+  font-size: 2.3em;
+  text-align: left;
+  margin-left: 20px;
 }

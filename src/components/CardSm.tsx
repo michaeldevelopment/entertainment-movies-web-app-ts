@@ -1,15 +1,15 @@
 import React from 'react'
 import { CardProps } from '../interfaces/componentTypes';
 
-const CardLg = ({ title, thumbnail, year, category, rating, isBookmarked, isTrending } : CardProps) => {
-  const [, ...thumbnailSrc] : any = thumbnail.trending?.large;
+const CardSm = ({ title, thumbnail, year, category, rating, isBookmarked, isTrending } : CardProps) => {
+  const [, ...thumbnailSrc] : any = thumbnail.regular?.small;
 
   return (
     <>
-      <div className="trendingCard">
+      <div className="recommendedForYouCard">
         <img src={`.././src${thumbnailSrc && thumbnailSrc.join("")}`} />
         
-        <div className="trendingCardText">
+        <div className="recommendedForYouText">
           <span>{year} - {category} - {rating}</span>
           <h2> {title} </h2>
         </div>
@@ -18,4 +18,4 @@ const CardLg = ({ title, thumbnail, year, category, rating, isBookmarked, isTren
   )
 }
 
-export default CardLg;
+export default CardSm;

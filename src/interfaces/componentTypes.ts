@@ -4,4 +4,12 @@ export interface trendingContainerProps {
   trendingData: initialStateInterface[]
 }
 
-export type CardLgProps = initialStateInterface
+export interface RecommendedForYouContainerProps {
+  recommendedData: initialStateInterface[]
+}
+
+export type CardProps = initialStateInterface
+
+export type titleTextProps = {
+  titleText: string
+}
