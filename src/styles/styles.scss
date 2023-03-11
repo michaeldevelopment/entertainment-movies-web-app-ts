@@ -6,6 +6,12 @@ $navbar-background-color: #161D2F;
 $lighter-blue-color: #5A698F;
 $text-shadow: 0px 2px 3px rgba(70,65,65,0.6);
 
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
 @mixin generalContainerStyle($wrap) {
   display: flex;
   flex-direction: row;
@@ -47,7 +53,7 @@ div.trendingContainer {
 
 div.recommendedForYouContainer {
   @include generalContainerStyle(wrap);
-  width: 90vw;
+  // width: 90vw;
 }
 
 div.trendingCard {

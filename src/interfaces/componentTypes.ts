@@ -4,12 +4,17 @@ export interface trendingContainerProps {
   trendingData: initialStateInterface[]
 }
 
-export interface RecommendedForYouContainerProps {
+export interface recommendedForYouContainerProps {
   recommendedData: initialStateInterface[]
 }
 
-export type CardProps = initialStateInterface
+export interface navbarProps {
+  children: React.ReactElement;
+}
+
+export type cardProps = initialStateInterface
 
 export type titleTextProps = {
   titleText: string
 }
+

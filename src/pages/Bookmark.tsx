@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function Bookmark() {
-  return (
-    <div>Bookmark</div>
-  )
+  return <div>Bookmark</div>;
 }
