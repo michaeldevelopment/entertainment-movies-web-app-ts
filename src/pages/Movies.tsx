@@ -1,5 +1,12 @@
-import React from "react";
+import { useSelector } from "react-redux";
+import { initialStateInterface } from "../interfaces/redux";
+import MiddleContainer from "../components/MiddleContainer";
 
-export default function Movies() {
-  return <h2>Movies</h2>;
+const Movies = () => {
+  const allData = useSelector((state: initialStateInterface[]) => state);
+  const moviesData = allData.filter((element) => element.category === "Movie");
+
+  return <MiddleContainer data={moviesData} titleText={"Movies"} />
 }
+
+export default Movies;

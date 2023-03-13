@@ -1,8 +1,7 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { initialStateInterface } from "../interfaces/redux";
-import TrendingContainer from "../components/TrendingContainer";
-import RecommendedForYouContainer from "../components/RecommendedForYouContainer";
+import BigContainer from "../components/BigContainer";
+import MiddleContainer from "../components/MiddleContainer";
 
 export default function Homepage() {
   const allData = useSelector((state: initialStateInterface[]) => state);
@@ -11,8 +10,8 @@ export default function Homepage() {
 
   return (
     <>
-      <TrendingContainer trendingData={trendingData} />
-      <RecommendedForYouContainer recommendedData={recommendedData} />
+      <BigContainer data={trendingData} titleText={"Trending"}/>
+      <MiddleContainer data={recommendedData} titleText={"Recommended for you"}/>
     </>
   );
 }

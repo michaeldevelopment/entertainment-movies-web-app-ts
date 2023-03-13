@@ -103,8 +103,8 @@ div.navbarContainer {
     display: flex;
     gap: 40px;
 
-    img:hover {
-      fill: white;
+    .navbarIcon:hover {
+      fill: $red-color;
     }
   }
 

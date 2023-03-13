@@ -1,9 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
 
-import IconNavHome from "../assets/icon-nav-home.svg";
-import IconNavMovies from "../assets/icon-nav-movies.svg";
-import IconNavTvSeries from "../assets/icon-nav-tv-series.svg";
-import IconNavBookmark from "../assets/icon-nav-bookmark.svg";
+import IconNavHome from "../svgIcons/IconNavHome";
+import IconNavMovies from "../svgIcons/IconNavMovies";
+import IconNavTvSeries from "../svgIcons/IconNavTvSeries";
+import IconNavBookmark from "../svgIcons/IconNavBookmark";
 import IconNavLogo from "../assets/logo.svg";
 
 import Avatar from "../assets/image-avatar.png";
@@ -20,17 +20,16 @@ const Navbar = () => {
               isActive ? "active" : isPending ? "pending" : ""
             }
           >
-            <IconNavHome />
-            <img src={IconNavHome} />
+            <IconNavHome className="navbarIcon" fill="#5A698F"/>
           </NavLink>
           <NavLink to="/movies">
-            <img src={IconNavMovies} />
+            <IconNavMovies className="navbarIcon" fill="#5A698F"/>
           </NavLink>
           <NavLink to="/tvshows">
-            <img src={IconNavTvSeries} />
+            <IconNavTvSeries className="navbarIcon" fill="#5A698F"/>
           </NavLink>
           <NavLink to="/bookmark">
-            <img src={IconNavBookmark} />
+            <IconNavBookmark className="navbarIcon" fill="#5A698F"/>
           </NavLink>
         </div>
         <img className="avatarImg" src={Avatar}></img>
