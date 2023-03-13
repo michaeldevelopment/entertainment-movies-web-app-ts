@@ -1,8 +1,13 @@
 import { useState } from "react";
-import Homepage from "./pages/Homepage";
+import Navbar from "./components/Navbar";
+import { appProps } from "./interfaces/componentTypes";
 
 function App() {
-  return <Homepage />;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
 
 export default App;

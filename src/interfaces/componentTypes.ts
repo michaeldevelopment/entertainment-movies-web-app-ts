@@ -1,20 +1,19 @@
 import { initialStateInterface } from "./redux";
 
 export interface trendingContainerProps {
-  trendingData: initialStateInterface[]
+  trendingData: initialStateInterface[];
 }
 
 export interface recommendedForYouContainerProps {
-  recommendedData: initialStateInterface[]
-}
-
-export interface navbarProps {
-  children: React.ReactElement;
+  recommendedData: initialStateInterface[];
 }
 
 export type cardProps = initialStateInterface
 
 export type titleTextProps = {
-  titleText: string
+  titleText: string;
 }
 
+export type iconDescriptionProps = {
+  iconType: string;
+}

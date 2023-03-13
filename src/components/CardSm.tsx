@@ -1,5 +1,6 @@
 import React from "react";
 import { cardProps } from "../interfaces/componentTypes";
+import IconDescription from "./IconDescription";
 
 const CardSm = ({
   title,
@@ -15,11 +16,15 @@ const CardSm = ({
   return (
     <>
       <div className="recommendedForYouCard">
-        <img src={`.././src${thumbnailSrc && thumbnailSrc.join("")}`} />
+        <img
+          className="thumbnailImg"
+          src={`.././src${thumbnailSrc && thumbnailSrc.join("")}`}
+        />
 
         <div className="recommendedForYouText">
           <span>
-            {year} - {category} - {rating}
+            {year} • <IconDescription iconType={`${category}`} /> • {category} •
+            {rating}
           </span>
           <h2> {title} </h2>
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Movies() {
-  return <div>Movies</div>;
+  return <h2>Movies</h2>;
 }
