@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { cardProps } from "../interfaces/componentTypes";
 import IconDescription from "./IconDescription";
+
+import IconBookmarkEmpty from "../svgIcons/IconBookmarkEmpty";
 
 const CardLg = ({
   title,
@@ -11,7 +13,12 @@ const CardLg = ({
   isBookmarked,
   isTrending,
 }: cardProps) => {
+  const [ isActiveObj, setIsActive ] = useState(false);
   const [, ...thumbnailSrc]: any = thumbnail.trending?.large;
+
+  const handleOnClickBookmarkIcon = (isActiveBoolean: boolean) => {
+    return setIsActive(isActiveBoolean);
+  }
 
   return (
     <>
@@ -20,7 +27,7 @@ const CardLg = ({
           className="thumbnailImg"
           src={`.././src${thumbnailSrc && thumbnailSrc.join("")}`}
         />
-
+        <IconBookmarkEmpty className={`cardBookmarkIcon ${isActiveObj ? "isBookmarked" : "" }`} fill="none" onClick={() => handleOnClickBookmarkIcon(isActiveObj ? false : true)}/>
         <div className="trendingCardText">
           <span>
             {year} • <IconDescription iconType={`${category}`} /> • {category} •

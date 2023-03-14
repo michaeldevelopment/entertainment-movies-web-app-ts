@@ -3,6 +3,7 @@ $white-color-with-opacity: rgb(255,255,255, 0.7);
 $background-color: #10141E;
 $red-color: #FC4747;
 $navbar-background-color: #161D2F;
+$dark-color-with-opacity: rgb(16, 20, 30, 0.5);
 $lighter-blue-color: #5A698F;
 $text-shadow: 0px 2px 3px rgba(70,65,65,0.6);
 
@@ -82,6 +83,27 @@ div.recommendedForYouText {
   @include generalCardTextStyle(5px, 30px);
 }
 
+.cardBookmarkIcon {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  background-color: $dark-color-with-opacity;
+  padding: 15px;
+  border-radius: 10px;
+
+  &:hover {
+    fill: $background-color;
+    background-color: $white-color;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+
+  &.isBookmarked {
+    fill: $white-color;
+  }
+}
+
 h1.titleText {
   color: $white-color;
   font-size: 2.3em;
@@ -102,6 +124,10 @@ div.navbarContainer {
   div.mainIconsContainer {
     display: flex;
     gap: 40px;
+
+    .navbarIcon.active {
+      fill: $white-color;
+    }
 
     .navbarIcon:hover {
       fill: $red-color;

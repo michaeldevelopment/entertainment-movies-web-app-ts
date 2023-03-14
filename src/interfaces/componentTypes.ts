@@ -8,18 +8,33 @@ export interface recommendedForYouContainerProps {
   recommendedData: initialStateInterface[];
 }
 
-
 export interface containerProps {
   data: initialStateInterface[];
   titleText: string;
 }
 
 export interface iconSVGProps {
-  className: string;
-  fill: string;
+  className?: string;
+  fill?: string;
 }
 
-export type cardProps = initialStateInterface
+export interface stateNavbarInterface {
+  isActiveIconNavHome: boolean;
+  isActiveIconNavMovies: boolean;
+  isActiveIconNavTvSeries: boolean;
+  isActiveIconNavBookmark: boolean;
+}
+
+export interface stateReducerInterface {
+  prev: stateNavbarInterface;
+  next: stateNavbarInterface;
+}
+
+export interface iconSVGBookmarkActionableProps extends iconSVGProps {
+  onClick: () => void;
+}
+
+export type cardProps = initialStateInterface;
 
 export type titleTextProps = {
   titleText: string;
