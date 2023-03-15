@@ -13,6 +13,7 @@ export type thumbnailType = {
   regular: regularInterface
 };
 
+
 interface trendingInterface {
   small: string;
   large: string;
@@ -22,7 +23,19 @@ interface regularInterface extends trendingInterface {
   medium: string;
 };
 
-export type actionTypes = {
+
+interface actionDataTypes {
   type: string;
-  payload: string;
-};
+}
+
+interface updateBookmarkedDataType extends actionDataTypes {
+  type: "updateBookmarkedData";
+  payload: updateBookmarkedDataPayloadType;
+}
+
+export type updateBookmarkedDataPayloadType = {
+  title: string,
+  isBookmarkedBoolean: boolean
+}
+
+export type actionTypes = updateBookmarkedDataType;

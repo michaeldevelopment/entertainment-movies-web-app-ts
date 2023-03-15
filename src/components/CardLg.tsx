@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { cardProps } from "../interfaces/componentTypes";
 import IconDescription from "./IconDescription";
-
 import IconBookmarkEmpty from "../svgIcons/IconBookmarkEmpty";
+import { useDispatch } from "react-redux";
+import { updateBookmarkedData } from "../store/actions";
+import { useBookmarkFunctionality } from "../customHooks";
 
 const CardLg = ({
   title,
@@ -13,12 +15,8 @@ const CardLg = ({
   isBookmarked,
   isTrending,
 }: cardProps) => {
-  const [ isActiveObj, setIsActive ] = useState(false);
+  const { isActiveObj, handleOnClickBookmarkIcon } = useBookmarkFunctionality(isBookmarked);
   const [, ...thumbnailSrc]: any = thumbnail.trending?.large;
-
-  const handleOnClickBookmarkIcon = (isActiveBoolean: boolean) => {
-    return setIsActive(isActiveBoolean);
-  }
 
   return (
     <>
@@ -27,7 +25,7 @@ const CardLg = ({
           className="thumbnailImg"
           src={`.././src${thumbnailSrc && thumbnailSrc.join("")}`}
         />
-        <IconBookmarkEmpty className={`cardBookmarkIcon ${isActiveObj ? "isBookmarked" : "" }`} fill="none" onClick={() => handleOnClickBookmarkIcon(isActiveObj ? false : true)}/>
+        <IconBookmarkEmpty className={`cardBookmarkBigContainerIcon ${isActiveObj ? "isBookmarked" : "" }`} fill="none" onClick={() => handleOnClickBookmarkIcon(isActiveObj ? false : true, title)}/>
         <div className="trendingCardText">
           <span>
             {year} • <IconDescription iconType={`${category}`} /> • {category} •

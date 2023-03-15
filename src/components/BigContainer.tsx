@@ -8,8 +8,8 @@ const BigContainer = ({ data, titleText }: containerProps) => {
       <Title titleText={titleText} />
       <div className="trendingContainer">
         {data &&
-          data.map((elementProps, index) => (
-            <CardLg {...elementProps} key={index} />
+          data.map((elementProps) => (
+            <CardLg {...elementProps} key={elementProps.title} />
           ))}
       </div>
     </>

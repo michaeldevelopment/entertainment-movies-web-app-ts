@@ -1,6 +1,8 @@
 import React from "react";
 import { cardProps } from "../interfaces/componentTypes";
 import IconDescription from "./IconDescription";
+import IconBookmarkEmpty from "../svgIcons/IconBookmarkEmpty";
+import { useBookmarkFunctionality } from "../customHooks";
 
 const CardSm = ({
   title,
@@ -11,6 +13,7 @@ const CardSm = ({
   isBookmarked,
   isTrending,
 }: cardProps) => {
+  const { isActiveObj, handleOnClickBookmarkIcon } = useBookmarkFunctionality(isBookmarked);
   const [, ...thumbnailSrc]: any = thumbnail.regular?.small;
 
   return (
@@ -20,7 +23,7 @@ const CardSm = ({
           className="thumbnailImg"
           src={`.././src${thumbnailSrc && thumbnailSrc.join("")}`}
         />
-
+        <IconBookmarkEmpty className={`cardBookmarkMiddleContainerIcon ${isActiveObj ? "isBookmarked" : "" }`} fill="none" onClick={() => handleOnClickBookmarkIcon(isActiveObj ? false : true, title)}/>
         <div className="recommendedForYouText">
           <span>
             {year} • <IconDescription iconType={`${category}`} /> • {category} •

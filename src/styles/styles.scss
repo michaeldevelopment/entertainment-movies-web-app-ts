@@ -50,6 +50,23 @@ body {
   }
 }
 
+@mixin iconBookmarkStyle {
+  background-color: $dark-color-with-opacity;
+  padding: 15px;
+  border-radius: 10px;
+
+  &:hover {
+    fill: $background-color;
+    background-color: $white-color;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+
+  &.isBookmarked {
+    fill: $white-color;
+  }
+}
 
 div.trendingContainer {
   @include generalContainerStyle(no-wrap);
@@ -83,25 +100,18 @@ div.recommendedForYouText {
   @include generalCardTextStyle(5px, 30px);
 }
 
-.cardBookmarkIcon {
+.cardBookmarkBigContainerIcon {
   position: absolute;
   right: 30px;
   top: 20px;
-  background-color: $dark-color-with-opacity;
-  padding: 15px;
-  border-radius: 10px;
+  @include iconBookmarkStyle;
+}
 
-  &:hover {
-    fill: $background-color;
-    background-color: $white-color;
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition-duration: 0.5s;
-    cursor: pointer;
-  }
-
-  &.isBookmarked {
-    fill: $white-color;
-  }
+.cardBookmarkMiddleContainerIcon {
+  position: relative;
+  right: 60px;
+  bottom: 160px;
+  @include iconBookmarkStyle;
 }
 
 h1.titleText {

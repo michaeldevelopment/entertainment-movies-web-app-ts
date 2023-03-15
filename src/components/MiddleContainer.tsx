@@ -11,8 +11,8 @@ const MiddleContainer = ({
       <Title titleText={titleText} />
       <div className="recommendedForYouContainer">
         {data &&
-          data.map((elementProps, index) => (
-            <CardSm {...elementProps} key={index} />
+          data.map((elementProps) => (
+            <CardSm {...elementProps} key={elementProps.title} />
           ))}
       </div>
     </>
