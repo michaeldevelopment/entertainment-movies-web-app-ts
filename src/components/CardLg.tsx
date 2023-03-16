@@ -13,10 +13,10 @@ const CardLg = ({
   category,
   rating,
   isBookmarked,
-  isTrending,
 }: cardProps) => {
-  const { isActiveObj, handleOnClickBookmarkIcon } = useBookmarkFunctionality(isBookmarked);
-  const [, ...thumbnailSrc]: any = thumbnail.trending?.large;
+  const { isActiveObj, handleOnClickBookmarkIcon } =
+    useBookmarkFunctionality(isBookmarked);
+  const [, ...thumbnailSrc] = thumbnail.trending?.large as string;
 
   return (
     <>
@@ -25,7 +25,15 @@ const CardLg = ({
           className="thumbnailImg"
           src={`.././src${thumbnailSrc && thumbnailSrc.join("")}`}
         />
-        <IconBookmarkEmpty className={`cardBookmarkBigContainerIcon ${isActiveObj ? "isBookmarked" : "" }`} fill="none" onClick={() => handleOnClickBookmarkIcon(isActiveObj ? false : true, title)}/>
+        <IconBookmarkEmpty
+          className={`cardBookmarkBigContainerIcon ${
+            isActiveObj ? "isBookmarked" : ""
+          }`}
+          fill="none"
+          onClick={() =>
+            handleOnClickBookmarkIcon(isActiveObj ? false : true, title)
+          }
+        />
         <div className="trendingCardText">
           <span>
             {year} • <IconDescription iconType={`${category}`} /> • {category} •

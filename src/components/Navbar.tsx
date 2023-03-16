@@ -10,23 +10,40 @@ import Avatar from "../assets/image-avatar.png";
 
 const Navbar = () => {
   const { pathname } = useLocation();
-  
   return (
     <>
       <div className="navbarContainer">
         <img src={IconNavLogo}></img>
         <div className="mainIconsContainer">
           <NavLink to="/">
-             <IconNavHome className={`navbarIcon ${pathname === "/" ? "active": ""}`} fill="#5A698F"/>
+            <IconNavHome
+              className={`navbarIcon ${pathname === "/" ? "active" : ""}`}
+              fill="#5A698F"
+            />
           </NavLink>
           <NavLink to="/movies">
-            <IconNavMovies className={`navbarIcon ${pathname.includes("movies") ? "active": ""}`} fill="#5A698F"/>
+            <IconNavMovies
+              className={`navbarIcon ${
+                pathname.includes("movies") ? "active" : ""
+              }`}
+              fill="#5A698F"
+            />
           </NavLink>
           <NavLink to="/tvshows">
-            <IconNavTvSeries className={`navbarIcon ${pathname.includes("tvshows") ? "active": ""}`} fill="#5A698F"/>
+            <IconNavTvSeries
+              className={`navbarIcon ${
+                pathname.includes("tvshows") ? "active" : ""
+              }`}
+              fill="#5A698F"
+            />
           </NavLink>
           <NavLink to="/bookmark">
-            <IconNavBookmark className={`navbarIcon ${pathname.includes("bookmark") ? "active": ""}`} fill="#5A698F"/>
+            <IconNavBookmark
+              className={`navbarIcon ${
+                pathname.includes("bookmark") ? "active" : ""
+              }`}
+              fill="#5A698F"
+            />
           </NavLink>
         </div>
         <img className="avatarImg" src={Avatar}></img>

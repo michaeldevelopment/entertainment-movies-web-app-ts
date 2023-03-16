@@ -11,10 +11,10 @@ const CardSm = ({
   category,
   rating,
   isBookmarked,
-  isTrending,
 }: cardProps) => {
-  const { isActiveObj, handleOnClickBookmarkIcon } = useBookmarkFunctionality(isBookmarked);
-  const [, ...thumbnailSrc]: any = thumbnail.regular?.small;
+  const { isActiveObj, handleOnClickBookmarkIcon } =
+    useBookmarkFunctionality(isBookmarked);
+  const [, ...thumbnailSrc]: string = thumbnail.regular.small;
 
   return (
     <>
@@ -23,7 +23,15 @@ const CardSm = ({
           className="thumbnailImg"
           src={`.././src${thumbnailSrc && thumbnailSrc.join("")}`}
         />
-        <IconBookmarkEmpty className={`cardBookmarkMiddleContainerIcon ${isActiveObj ? "isBookmarked" : "" }`} fill="none" onClick={() => handleOnClickBookmarkIcon(isActiveObj ? false : true, title)}/>
+        <IconBookmarkEmpty
+          className={`cardBookmarkMiddleContainerIcon ${
+            isActiveObj ? "isBookmarked" : ""
+          }`}
+          fill="none"
+          onClick={() =>
+            handleOnClickBookmarkIcon(isActiveObj ? false : true, title)
+          }
+        />
         <div className="recommendedForYouText">
           <span>
             {year} • <IconDescription iconType={`${category}`} /> • {category} •

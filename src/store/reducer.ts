@@ -1,16 +1,23 @@
-import { initialState } from './initialState';
-import { initialStateInterface, actionTypes} from './../interfaces/redux';
+import { initialState } from "./initialState";
+import { initialStateInterface, actionTypes } from "./../interfaces/redux";
 
-export default function reducer(prevState: initialStateInterface[] = initialState, action: actionTypes) {
+export default function reducer(
+  prevState: initialStateInterface[] = initialState,
+  action: actionTypes
+) {
   const { type, payload } = action;
-  
-  switch(type) {
+
+  switch (type) {
     case "updateBookmarkedData":
       // let bookmarkedIndexElement = prevState.find(element => element.title === payload.title);
       // prevState[bookmarkedIndexElement] = payload.isBookmarkedBoolean;
       // return prevState;
-      return prevState.map(element => element.title === payload.title ? { ...element, isBookmarked: payload.isBookmarkedBoolean } : element);
+      return prevState.map((element) =>
+        element.title === payload.title
+          ? { ...element, isBookmarked: payload.isBookmarkedBoolean }
+          : element
+      );
     default:
       return prevState;
   }
-};
+}

@@ -7,7 +7,7 @@ $dark-color-with-opacity: rgb(16, 20, 30, 0.5);
 $lighter-blue-color: #5A698F;
 $text-shadow: 0px 2px 3px rgba(70,65,65,0.6);
 
-:root {
+:root, input {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -74,7 +74,6 @@ div.trendingContainer {
 
 div.recommendedForYouContainer {
   @include generalContainerStyle(wrap);
-  // width: 90vw;
 }
 
 div.trendingCard {
@@ -153,5 +152,27 @@ div.navbarContainer {
     border: 2px solid $white-color;
     border-radius: 50%;
     margin-right: 30px;
+  }
+}
+
+.inputSearchContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+  .iconInputSearch {
+    padding-top: 10px;
+  }
+
+  input {
+    width: 90vw;
+    background-color: $background-color;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 0px;
+    outline: 0px;
+    color: $white-color;
+    font-size: 25px;
   }
 }

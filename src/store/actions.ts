@@ -1,3 +1,12 @@
-import { updateBookmarkedDataPayloadType, actionTypes } from './../interfaces/redux';
+import {
+  updateBookmarkedDataPayloadType,
+  actionTypes,
+} from "./../interfaces/redux";
 
-export const updateBookmarkedData = ({ title, isBookmarkedBoolean }: updateBookmarkedDataPayloadType): actionTypes => ({ type: "updateBookmarkedData", payload: { title, isBookmarkedBoolean }})
+export const updateBookmarkedData = ({
+  title,
+  isBookmarkedBoolean,
+}: updateBookmarkedDataPayloadType): actionTypes => ({
+  type: "updateBookmarkedData",
+  payload: { title, isBookmarkedBoolean },
+});

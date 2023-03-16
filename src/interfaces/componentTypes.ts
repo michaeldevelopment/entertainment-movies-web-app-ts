@@ -34,12 +34,22 @@ export interface iconSVGBookmarkActionableProps extends iconSVGProps {
   onClick: () => void;
 }
 
+export interface categoriesObjLiteralInterface {
+  [key: string]: string;
+}
+
+export interface searchContainerProps {
+  inputValue: string;
+  pathname: string;
+  data: initialStateInterface[];
+}
+
 export type cardProps = initialStateInterface;
 
 export type titleTextProps = {
   titleText: string;
-}
+};
 
 export type iconDescriptionProps = {
   iconType: string;
-}
+};

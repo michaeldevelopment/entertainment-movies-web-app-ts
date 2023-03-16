@@ -1,7 +1,9 @@
-import * as React from "react"
-import { iconSVGBookmarkActionableProps } from "../interfaces/componentTypes"
+import * as React from "react";
+import { iconSVGBookmarkActionableProps } from "../interfaces/componentTypes";
 
-export default function IconBookmarkEmpty(props: iconSVGBookmarkActionableProps) {
+export default function IconBookmarkEmpty(
+  props: iconSVGBookmarkActionableProps
+) {
   return (
     <svg width={12} height={14} xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
@@ -9,5 +11,6 @@ export default function IconBookmarkEmpty(props: iconSVGBookmarkActionableProps)
         stroke="#FFF"
         strokeWidth={1.5}
       />
-    </svg>);
-};
+    </svg>
+  );
+}

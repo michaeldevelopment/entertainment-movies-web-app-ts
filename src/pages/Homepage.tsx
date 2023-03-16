@@ -10,8 +10,11 @@ export default function Homepage() {
 
   return (
     <>
-      <BigContainer data={trendingData} titleText={"Trending"}/>
-      <MiddleContainer data={recommendedData} titleText={"Recommended for you"}/>
+      <BigContainer data={trendingData} titleText={"Trending"} />
+      <MiddleContainer
+        data={recommendedData}
+        titleText={"Recommended for you"}
+      />
     </>
   );
 }

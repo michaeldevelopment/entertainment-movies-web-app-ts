@@ -12,27 +12,32 @@ import TvShows from "./pages/TvShows";
 import "./styles//styles.scss";
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/Navbar";
+import InputSearch from "./components/InputSearch";
 
 const router = createBrowserRouter([
   {
     element: <Navbar />,
-    children: [
-      {
-        path: "/",
-        element: <Homepage />,
-      },
-      {
-        path: "/movies",
-        element: <Movies />,
-      },
-      {
-        path: "/tvshows",
-        element: <TvShows />,
-      },
-      {
-        path: "/bookmark",
-        element: <Bookmark />,
-      },
+    children: [{
+      element: <InputSearch />,
+      children: [
+        {
+          path: "/",
+          element: <Homepage />,
+        },
+        {
+          path: "/movies",
+          element: <Movies />,
+        },
+        {
+          path: "/tvshows",
+          element: <TvShows />,
+        },
+        {
+          path: "/bookmark",
+          element: <Bookmark />,
+        }
+        ]
+      }
     ],
   },
 ]);
