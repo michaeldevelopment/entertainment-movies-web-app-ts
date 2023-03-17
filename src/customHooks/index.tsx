@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { categoriesObjLiteralInterface } from "../interfaces/componentTypes";
 
 export const useBookmarkFunctionality = (isBookmarked: boolean) => {
-  const [isActiveObj, setIsActive] = useState(isBookmarked);
+  const [isActiveObj, setIsActive] = useState<boolean>(isBookmarked);
   const dispatch = useDispatch();
 
   const handleOnClickBookmarkIcon = (
