@@ -17,27 +17,28 @@ import InputSearch from "./components/InputSearch";
 const router = createBrowserRouter([
   {
     element: <Navbar />,
-    children: [{
-      element: <InputSearch />,
-      children: [
-        {
-          path: "/",
-          element: <Homepage />,
-        },
-        {
-          path: "/movies",
-          element: <Movies />,
-        },
-        {
-          path: "/tvshows",
-          element: <TvShows />,
-        },
-        {
-          path: "/bookmark",
-          element: <Bookmark />,
-        }
-        ]
-      }
+    children: [
+      {
+        element: <InputSearch />,
+        children: [
+          {
+            path: "/",
+            element: <Homepage />,
+          },
+          {
+            path: "/movies",
+            element: <Movies />,
+          },
+          {
+            path: "/tvshows",
+            element: <TvShows />,
+          },
+          {
+            path: "/bookmark",
+            element: <Bookmark />,
+          },
+        ],
+      },
     ],
   },
 ]);

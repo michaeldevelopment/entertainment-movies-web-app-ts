@@ -1,3 +1,9 @@
+const ACTION_TYPES = {
+  updateBookmarkedData: "updateBookmarkedData"
+} as const
+
+type actionTypes = typeof ACTION_TYPES;
+
 export interface initialStateInterface {
   title: string;
   thumbnail: thumbnailType;
@@ -24,10 +30,11 @@ interface regularInterface extends trendingInterface {
 
 interface actionDataTypes {
   type: string;
+  payload?: string | object
 }
 
 interface updateBookmarkedDataType extends actionDataTypes {
-  type: "updateBookmarkedData";
+  type: actionTypes["updateBookmarkedData"];
   payload: updateBookmarkedDataPayloadType;
 }
 
@@ -36,4 +43,4 @@ export type updateBookmarkedDataPayloadType = {
   isBookmarkedBoolean: boolean;
 };
 
-export type actionTypes = updateBookmarkedDataType;
+export type dispatchActionTypes  = updateBookmarkedDataType;

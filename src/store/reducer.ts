@@ -1,9 +1,9 @@
 import { initialState } from "./initialState";
-import { initialStateInterface, actionTypes } from "./../interfaces/redux";
+import { initialStateInterface, dispatchActionTypes } from "./../interfaces/redux";
 
 export default function reducer(
   prevState: initialStateInterface[] = initialState,
-  action: actionTypes
+  action: dispatchActionTypes
 ) {
   const { type, payload } = action;
 
