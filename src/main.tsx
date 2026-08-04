@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
 import { Provider } from "react-redux";
 import store from "./store/index";
@@ -14,7 +14,7 @@ import Homepage from "./pages/Homepage";
 import Navbar from "./components/Navbar";
 import InputSearch from "./components/InputSearch";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <Navbar />,
     children: [
