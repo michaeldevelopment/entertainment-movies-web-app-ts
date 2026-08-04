@@ -16,14 +16,12 @@ const CardLg = ({
 }: cardProps) => {
   const { isActiveObj, handleOnClickBookmarkIcon } =
     useBookmarkFunctionality(isBookmarked);
-  const [, ...thumbnailSrc] = thumbnail.trending?.large as string;
-
   return (
     <>
       <div className="trendingCard">
         <img
           className="thumbnailImg"
-          src={`.././src${thumbnailSrc && thumbnailSrc.join("")}`}
+          src={`${import.meta.env.BASE_URL}${thumbnail.trending?.large}`}
         />
         <IconBookmarkEmpty
           className={`cardBookmarkBigContainerIcon ${

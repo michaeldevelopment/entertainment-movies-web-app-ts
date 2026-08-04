@@ -14,14 +14,12 @@ const CardSm = ({
 }: cardProps) => {
   const { isActiveObj, handleOnClickBookmarkIcon } =
     useBookmarkFunctionality(isBookmarked);
-  const [, ...thumbnailSrc]: string = thumbnail.regular.small;
-
   return (
     <>
       <div className="recommendedForYouCard">
         <img
           className="thumbnailImg"
-          src={`.././src${thumbnailSrc && thumbnailSrc.join("")}`}
+          src={`${import.meta.env.BASE_URL}${thumbnail.regular.small}`}
         />
         <IconBookmarkEmpty
           className={`cardBookmarkMiddleContainerIcon ${
